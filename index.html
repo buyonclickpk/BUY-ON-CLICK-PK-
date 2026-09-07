@@ -1,1 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUY ON CLICK PK</title>
 
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+}
+header{
+  background:linear-gradient(135deg,#07111f,#123b70,#07111f);
+  color:white;
+  padding:18px 6%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 20px #0003;
+}
+.nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+.logo span{color:#00d9ff}
+.cart{
+  background:#00d9ff;
+  color:#07111f;
+  padding:11px 18px;
+  border-radius:30px;
+  font-weight:bold;
+}
+.hero{
+  min-height:430px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:70px 20px;
+  background:
+    radial-gradient(circle at 20% 20%,#00d9ff33,transparent 30%),
+    radial-gradient(circle at 80% 80%,#7c3cff33,transparent 30%),
+    #07111f;
+  color:white;
+}
+.hero h1{
+  font-size:clamp(38px,8vw,75px);
+  margin-bottom:15px;
+  animation:float 3s ease-in-out infinite;
+}
+.hero h1 span{color:#00d9ff}
+.hero p{
+  font-size:20px;
+  max-width:650px;
+  margin:0 auto 28px;
+  color:#d9e5f5;
+}
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#00d9ff;
+  color:#07111f;
+  padding:14px 28px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:.3s;
+}
+.btn:hover{
+  transform:scale(1.06);
+  box-shadow:0 0 25px #00d9ff88;
+}
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:55px 20px;
+}
+.title{
+  text-align:center;
+  font-size:35px;
+  margin-bottom:35px;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 8px 25px #17203318;
+  transition:.35s;
+  border:1px solid #e5eaf2;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 18px 35px #17203325;
+}
+.pic{
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:70px;
+  background:linear-gradient(135deg,#e8faff,#eef0ff);
+}
+.card-body{padding:20px}
+.card h3{margin-bottom:8px}
+.price{
+  color:#087fce;
+  font-size:22px;
+  font-weight:bold;
+  margin:12px 0;
+}
+.buy{
+  width:100%;
+  border:0;
+  padding:12px;
+  border-radius:12px;
+  background:#07111f;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+.buy:hover{background:#087fce}
+.contact{
+  background:linear-gradient(135deg,#07111f,#123b70);
+  color:white;
+  border-radius:25px;
+  text-align:center;
+  padding:45px 20px;
+}
+.contact h2{font-size:35px;margin-bottom:15px}
+.contact p{margin:10px;font-size:18px}
+footer{
+  text-align:center;
+  padding:25px;
+  background:#050b14;
+  color:#b9c6d8;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+@media(max-width:600px){
+  .logo{font-size:18px}
+  .cart{padding:9px 12px;font-size:13px}
+  .hero{min-height:400px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">BUY ON <span>CLICK PK</span></div>
+    <div class="cart">🛒 My Store</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>BUY ON <span>CLICK PK</span></h1>
+    <p>Your trusted online store for quality products at great prices.</p>
+    <a href="#products" class="btn">🛍️ Shop Now</a>
+  </div>
+</div>
+
+<section id="products">
+  <h2 class="title">🔥 Featured Products</h2>
+
+  <div class="products">
+
+    <div class="card">
+      <div class="pic">🎧</div>
+      <div class="card-body">
+        <h3>Wireless Headphones</h3>
+        <p>Premium sound and comfortable design.</p>
+        <div class="price">Rs. 2,499</div>
+        <button class="buy" onclick="order('Wireless Headphones')">Order Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="pic">⌚</div>
+      <div class="card-body">
+        <h3>Smart Watch</h3>
+        <p>Stylish smartwatch for everyday use.</p>
+        <div class="price">Rs. 2,999</div>
+        <button class="buy" onclick="order('Smart Watch')">Order Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="pic">📱</div>
+      <div class="card-body">
+        <h3>Mobile Accessories</h3>
+        <p>Useful accessories for your smartphone.</p>
+        <div class="price">Rs. 999</div>
+        <button class="buy" onclick="order('Mobile Accessories')">Order Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="pic">💡</div>
+      <div class="card-body">
+        <h3>Smart LED Light</h3>
+        <p>Modern lighting for your home.</p>
+        <div class="price">Rs. 1,499</div>
+        <button class="buy" onclick="order('Smart LED Light')">Order Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="pic">🎒</div>
+      <div class="card-body">
+        <h3>Travel Bag</h3>
+        <p>Strong and stylish bag for travelling.</p>
+        <div class="price">Rs. 1,999</div>
+        <button class="buy" onclick="order('Travel Bag')">Order Now</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="pic">🏠</div>
+      <div class="card-body">
+        <h3>Home Products</h3>
+        <p>Useful products for your daily home needs.</p>
+        <div class="price">Rs. 799</div>
+        <button class="buy" onclick="order('Home Products')">Order Now</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="contact">
+    <h2>📞 Contact BUY ON CLICK PK</h2>
+    <p>WhatsApp / Call: <strong>03448862313</strong></p>
+    <p>Email: <strong>buyonclickpk@gmail.com</strong></p>
+    <br>
+    <a class="btn" href="https://wa.me/923448862313">💬 Order on WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 BUY ON CLICK PK — All Rights Reserved
+</footer>
+
+<script>
+function order(product){
+  const message =
+    "Assalamualaikum, I want to order: " + product +
+    " from BUY ON CLICK PK.";
+  const url =
+    "https://wa.me/923448862313?text=" +
+    encodeURIComponent(message);
+  window.open(url,"_blank");
+}
+</script>
+
+</body>
+</html>
